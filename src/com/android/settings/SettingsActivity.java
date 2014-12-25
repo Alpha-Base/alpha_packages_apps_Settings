@@ -79,6 +79,7 @@ import com.android.settings.applications.ProcessStatsUi;
 import com.android.settings.applications.UsageAccessDetails;
 import com.android.settings.applications.WriteSettingsDetails;
 import com.android.settings.bluetooth.BluetoothSettings;
+import com.android.settings.nexus.HeadsUpSettings;
 import com.android.settings.dashboard.DashboardCategory;
 import com.android.settings.dashboard.DashboardSummary;
 import com.android.settings.dashboard.DashboardTile;
@@ -365,7 +366,8 @@ public class SettingsActivity extends Activity
             Statusbar.class.getName(),
             NavbarSettings.class.getName(),
             FlingSettings.class.getName(),
-            SmartbarSettings.class.getName()
+            SmartbarSettings.class.getName(),
+            HeadsUpSettings.class.getName()
     };
 
 
