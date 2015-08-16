@@ -17,6 +17,11 @@
     <string name="mem_info">Memory</string>
     <string name="solo_version">Solo Project</string>
     <string name="build_date">Build date</string>
-    
+
+    <!-- Contextual header -->
+    <string name="notification_panel_title">Notification panel</string>
+    <string name="status_bar_custom_header_title">Custom header image</string>
+    <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
+    <string name="daylight_header_pack_title">Header image pack</string>
 </resources>
 
