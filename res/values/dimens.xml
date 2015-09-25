@@ -46,10 +46,10 @@
     <dimen name="setup_preference_icon_frame_width">60dp</dimen>
     <dimen name="setup_wizard_margin_top">24dp</dimen>
 
-    <dimen name="divider_height">3dip</dimen>
+    <dimen name="divider_height">0dip</dimen>
     <dimen name="divider_margin_top">6dip</dimen>
     <dimen name="divider_margin_bottom">7dip</dimen>
-    <dimen name="vert_divider_width">1dip</dimen>
+    <dimen name="vert_divider_width">0dip</dimen>
 
     <!--  Size of icons in the top-level of settings  -->
     <dimen name="header_icon_width">28dp</dimen>
@@ -93,8 +93,8 @@
     <dimen name="dashboard_cell_gap_y">0dp</dimen>
 
     <!-- Dashboard padding in its container -->
-    <dimen name="dashboard_padding_start">0dp</dimen>
-    <dimen name="dashboard_padding_end">0dp</dimen>
+    <dimen name="dashboard_padding_start">4dp</dimen>
+    <dimen name="dashboard_padding_end">4dp</dimen>
     <dimen name="dashboard_padding_top">0dp</dimen>
     <dimen name="dashboard_padding_bottom">0dp</dimen>
 
@@ -103,7 +103,7 @@
     <dimen name="dashboard_category_padding_end">0dp</dimen>
 
     <!-- Dashboard category panel elevation -->
-    <dimen name="dashboard_category_elevation">4dp</dimen>
+    <dimen name="dashboard_category_elevation">8dp</dimen>
 
     <!-- Dashboard category title layout height -->
     <dimen name="dashboard_category_title_height">48dp</dimen>
