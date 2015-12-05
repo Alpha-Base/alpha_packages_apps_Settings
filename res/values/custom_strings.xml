@@ -175,5 +175,11 @@
     <string name="notification_light_voicemail_title">Voicemail</string>
     <string name="add">Add</string>
     <string name="choose_app">Choose app</string>
+
+    <!-- Linked / unlinked notification volume -->
+    <string name="link_volume_option_title">Link ring and notification volume</string>
+    <string name="notification_volume_option_title">Notification volume</string>
+    <string name="ring_notification_volume_option_title">Ring and notification volume</string>
+
 </resources>
 
