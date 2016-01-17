@@ -117,6 +117,9 @@ import com.android.settings.search.Index;
 import com.android.settings.sim.SimSettings;
 import com.android.settings.solo.NotificationDrawer;
 import com.android.settings.solo.Navigation;
+import com.android.settings.solo.NavbarSettings;
+import com.android.settings.solo.FlingSettings;
+import com.android.settings.solo.SmartbarSettings;
 import com.android.settings.solo.Statusbar;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.users.UserSettings;
@@ -361,6 +364,9 @@ public class SettingsActivity extends Activity
             NotificationDrawer.class.getName(),
             Navigation.class.getName(),
             Statusbar.class.getName(),
+            NavbarSettings.class.getName(),
+            FlingSettings.class.getName(),
+            SmartbarSettings.class.getName()
     };
 
 

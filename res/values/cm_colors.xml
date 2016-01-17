@@ -17,6 +17,7 @@ limitations under the License.
 <resources>
     <color name="floating_action_button_touch_tint">#80ffffff</color>
     <color name="theme_accent">#ff009688</color>
+    <color name="action_picker_fab_background">@color/theme_accent</color>
 
     <drawable name="expanded_item_bg_activated">#ffEEEEEE</drawable>
     <drawable name="expanded_item_bg">@android:color/background_light</drawable>

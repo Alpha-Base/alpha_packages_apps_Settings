@@ -121,4 +121,7 @@ public class Settings extends SettingsActivity {
     public static class NotificationDrawer extends SettingsActivity { /* empty */ }
     public static class Navigation extends SettingsActivity { /* empty */ }
     public static class Statusbar extends SettingsActivity { /* empty */ }
+    public static class NavigationSettingsActivity extends SettingsActivity { /* empty */ }
+    public static class FlingSettingsActivity extends SettingsActivity { /* empty */ }
+    public static class SmartbarSettingsActivity extends SettingsActivity { /* empty */ }
 }
