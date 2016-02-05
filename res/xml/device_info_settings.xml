@@ -17,7 +17,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
 
-        <!-- System update settings - launches activity -->
+        <!-- System update settings - launches activity >
         <PreferenceScreen android:key="system_update_settings"
                 android:title="@string/system_update_settings_list_item_title"
                 android:summary="@string/system_update_settings_list_item_summary">
@@ -30,7 +30,7 @@
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="@string/additional_system_update"
                     android:targetClass="@string/additional_system_update_menu" />
-        </PreferenceScreen>
+        </PreferenceScreen-->
 
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
@@ -71,6 +71,18 @@
                 android:title="@string/model_number"
                 android:summary="@string/device_info_default"/>
 
+        <!-- Device cpu info -->
+        <Preference android:key="device_cpu"
+		style="?android:preferenceInformationStyle"
+		android:title="@string/cpu_info"
+		android:summary="@string/device_info_default"/>
+
+	<!-- Device mem info -->
+	<Preference android:key="device_memory"
+		style="?android:preferenceInformationStyle"
+		android:title="@string/mem_info"
+		android:summary="@string/device_info_default"/>
+
         <!-- Device firmware version -->
         <Preference android:key="firmware_version"
                 style="?android:preferenceInformationStyle"
@@ -100,6 +112,18 @@
                 style="?android:preferenceInformationStyle"
                 android:title="@string/kernel_version"
                 android:summary="@string/device_info_default"/>
+
+        <!-- Solo version -->
+	<Preference android:key="solo_version"
+		style="?android:preferenceInformationStyle"
+		android:title="@string/solo_version"
+		android:summary="@string/device_info_default" />
+
+	<!-- Build date -->
+	<Preference android:key="build_date"
+		style="?android:preferenceInformationStyle"
+		android:title="@string/build_date"
+		android:summary="@string/device_info_default" />
 
         <!-- Detailed build version -->
         <Preference android:key="build_number"
