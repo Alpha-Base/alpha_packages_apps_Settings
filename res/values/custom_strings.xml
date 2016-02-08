@@ -18,6 +18,13 @@
     <string name="solo_version">Solo Project</string>
     <string name="build_date">Build date</string>
 
+    <!-- Tuner settings -->
+    <string name="header_category_tuner">Tuner</string>
+    <string name="category_key_tuner">Tuner</string>
+    <string name="notiication_drawer_title">Notification drawer</string>
+    <string name="navigation_title">Buttons &amp; navigation</string>
+    <string name="statusbar_title">Statusbar</string>
+
     <!-- Contextual header -->
     <string name="notification_panel_title">Notification panel</string>
     <string name="status_bar_custom_header_title">Custom header image</string>

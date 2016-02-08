@@ -115,6 +115,9 @@ import com.android.settings.print.PrintSettingsFragment;
 import com.android.settings.search.DynamicIndexableContentMonitor;
 import com.android.settings.search.Index;
 import com.android.settings.sim.SimSettings;
+import com.android.settings.solo.NotificationDrawer;
+import com.android.settings.solo.Navigation;
+import com.android.settings.solo.Statusbar;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.users.UserSettings;
 import com.android.settings.vpn2.VpnSettings;
@@ -278,7 +281,8 @@ public class SettingsActivity extends Activity
             R.id.print_settings,
             R.id.nfc_payment_settings,
             R.id.home_settings,
-            R.id.dashboard
+            R.id.dashboard,
+            R.id.tuner_section
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -354,6 +358,9 @@ public class SettingsActivity extends Activity
             ProcessStatsSummary.class.getName(),
             DrawOverlayDetails.class.getName(),
             WriteSettingsDetails.class.getName(),
+            NotificationDrawer.class.getName(),
+            Navigation.class.getName(),
+            Statusbar.class.getName(),
     };
 
 

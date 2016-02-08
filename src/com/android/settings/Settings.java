@@ -118,4 +118,7 @@ public class Settings extends SettingsActivity {
     public static class WriteSettingsActivity extends SettingsActivity { /* empty */ }
     public static class AppDrawOverlaySettingsActivity extends SettingsActivity { /* empty */ }
     public static class AppWriteSettingsActivity extends SettingsActivity { /* empty */ }
+    public static class NotificationDrawer extends SettingsActivity { /* empty */ }
+    public static class Navigation extends SettingsActivity { /* empty */ }
+    public static class Statusbar extends SettingsActivity { /* empty */ }
 }

@@ -87,6 +87,48 @@
 
     </dashboard-category>
 
+    <!-- TUNER -->
+    <dashboard-category
+            android:id="@+id/tuner_section"
+            android:key="@string/category_key_tuner"
+            android:title="@string/header_category_tuner" >
+
+       <!-- DRAWER -->
+       <dashboard-tile
+            android:id="@+id/notiication_drawer"
+            android:title="@string/notiication_drawer_title"
+            android:fragment="com.android.settings.solo.NotificationDrawer"
+            android:icon="@drawable/ic_settings_notification_drawer"
+            />
+
+       <!-- NAVIGATION -->
+       <dashboard-tile
+            android:id="@+id/navigation"
+            android:title="@string/navigation_title"
+            android:fragment="com.android.settings.solo.Navigation"
+            android:icon="@drawable/ic_settings_buttons"
+            />
+
+       <!-- STATUSBAR -->
+       <dashboard-tile
+            android:id="@+id/statusbar"
+            android:title="@string/statusbar_title"
+            android:fragment="com.android.settings.solo.Statusbar"
+            android:icon="@drawable/ic_settings_statusbar"
+            />
+
+        <!-- Themes -->
+        <!-- NOTE: Intent.parseIntent looks for "categories" tag and not "category" -->
+        <dashboard-tile
+            android:id="@+id/theme_settings"
+            android:title="@string/themes_settings_title"
+            android:icon="@drawable/ic_settings_themes">
+            <intent
+                android:action="android.intent.action.MAIN" >
+                <categories android:name="cyanogenmod.intent.category.APP_THEMES" />
+            </intent>
+        </dashboard-tile>
+    </dashboard-category>
     <!-- DEVICE -->
     <dashboard-category
             android:id="@+id/device_section"
@@ -108,18 +150,6 @@
                 android:fragment="com.android.settings.DisplaySettings"
                 android:icon="@drawable/ic_settings_display"
                 />
-
-        <!-- Themes -->
-        <!-- NOTE: Intent.parseIntent looks for "categories" tag and not "category" -->
-        <dashboard-tile
-            android:id="@+id/theme_settings"
-            android:title="@string/themes_settings_title"
-            android:icon="@drawable/ic_settings_themes">
-            <intent
-                android:action="android.intent.action.MAIN" >
-                <categories android:name="cyanogenmod.intent.category.APP_THEMES" />
-            </intent>
-        </dashboard-tile>
 
         <!-- Notifications -->
         <dashboard-tile
