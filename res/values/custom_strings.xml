@@ -66,6 +66,10 @@
     <!-- Power button -->
     <string name="power_button_title">Power button</string>
 
+    <!-- Lockscreen Torch toggle -->
+    <string name="keyguard_torch_title">Lockscreen torch</string>
+    <string name="keyguard_torch_summary">Longpress power button with screen off turns on torch</string>
+
     <!--- Volume buttons -->
     <string name="volume_button_title">Volume buttons</string>
     <string name="volume_key_cursor_control_title">Volume key cursor control</string>
