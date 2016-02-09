@@ -77,6 +77,8 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import android.view.View;
 
 public class NotificationDrawer extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -90,12 +92,14 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
     private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
     private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
     private static final String LOCK_CLOCK_PACKAGE="com.cyanogenmod.lockclock";
+    private static final String PRE_QUICK_PULLDOWN = "quick_pulldown";
 
     private ListPreference mDaylightHeaderPack;
     private CheckBoxPreference mCustomHeaderImage;
     private PreferenceCategory mWeatherCategory;
     private ListPreference mWeatherIconPack;
     private CheckBoxPreference mHeaderWeather;
+    private ListPreference mQuickPulldown;
 
     @Override
     protected int getMetricsCategory() {
@@ -165,6 +169,13 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
         mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntry());
         mDaylightHeaderPack.setOnPreferenceChangeListener(this);
         mDaylightHeaderPack.setEnabled(customHeaderImage);
+
+        mQuickPulldown = (ListPreference) findPreference(PRE_QUICK_PULLDOWN);
+        mQuickPulldown.setOnPreferenceChangeListener(this);
+        int statusQuickPulldown = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1);
+        mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
+        updateQuickPulldownSummary(statusQuickPulldown);
     }
 
     @Override
@@ -202,7 +213,14 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
             int valueIndex = mWeatherIconPack.findIndexOfValue(value);
             mWeatherIconPack.setSummary(mWeatherIconPack.getEntries()[valueIndex]);
         }
-
+        if (preference == mQuickPulldown) {
+            int statusQuickPulldown = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+                    statusQuickPulldown);
+            updateQuickPulldownSummary(statusQuickPulldown);
+            return true;
+        }
         return true;
     }
 
@@ -326,5 +344,21 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
             }
         }
         return headerPacks.toArray(new String[headerPacks.size()]);
+    }
+
+    private void updateQuickPulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // quick pulldown deactivated
+            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_off));
+        } else {
+            Locale l = Locale.getDefault();
+            boolean isRtl = TextUtils.getLayoutDirectionFromLocale(l) == View.LAYOUT_DIRECTION_RTL;
+            String direction = res.getString(value == 2
+                    ? (isRtl ? R.string.quick_pulldown_right : R.string.quick_pulldown_left)
+                    : (isRtl ? R.string.quick_pulldown_left : R.string.quick_pulldown_right));
+            mQuickPulldown.setSummary(res.getString(R.string.summary_quick_pulldown, direction));
+        }
     }
 }

@@ -23,6 +23,13 @@
             android:key="tiles"
             android:title="@string/tile_category">
 
+            <ListPreference
+                    android:key="quick_pulldown"
+                    android:title="@string/title_quick_pulldown"
+                    android:entries="@array/quick_pulldown_entries"
+                    android:entryValues="@array/quick_pulldown_values"
+                    android:persistent="false" />
+
             <PreferenceScreen
                     android:title="@string/quick_settings_title"
                     android:summary="@string/quick_settings_summary" >
