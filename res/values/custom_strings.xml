@@ -59,6 +59,20 @@
     <!-- Power button -->
     <string name="power_button_title">Power button</string>
 
+    <!--- Volume buttons -->
+    <string name="volume_button_title">Volume buttons</string>
+    <string name="volume_key_cursor_control_title">Volume key cursor control</string>
+    <string name="volume_key_cursor_control_off">Disabled</string>
+    <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
+    <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
+    <!-- Volume rocker wake -->
+    <string name="volume_rocker_wake_title">Volume rocker wake</string>
+    <string name="volume_rocker_wake_summary">Pressing the volume keys will wake your device</string>
+    <!-- Volume keys skip track -->
+    <string name="volbtn_music_controls_title">Playback control</string>
+    <string name="volbtn_music_controls_summary">When the screen is off, long pressing the volume keys will seek music tracks</string>
+ 
+
     <!-- Display : Rotation -->
     <string name="display_rotation_title">Rotation</string>
     <string name="display_rotation_disabled">Disabled</string>

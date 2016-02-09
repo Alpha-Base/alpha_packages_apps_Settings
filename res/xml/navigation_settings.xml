@@ -29,6 +29,30 @@
                 android:persistent="false" />
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="volume_button"
+        android:title="@string/volume_button_title">
+
+        <ListPreference
+                android:dialogTitle="@string/volume_key_cursor_control_title"
+                android:entries="@array/volume_key_cursor_control_entries"
+                android:entryValues="@array/volume_key_cursor_control_values"
+                android:key="volume_key_cursor_control"
+                android:persistent="false"
+                android:title="@string/volume_key_cursor_control_title" />
+
+        <SwitchPreference
+                android:key="volume_rocker_wake"
+                android:summary="@string/volume_rocker_wake_summary"
+                android:title="@string/volume_rocker_wake_title" />
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
+                android:key="volbtn_music_controls"
+                android:title="@string/volbtn_music_controls_title"
+                android:summary="@string/volbtn_music_controls_summary"
+                android:defaultValue="true" />
+    </PreferenceCategory>
 </PreferenceScreen>
 
 
