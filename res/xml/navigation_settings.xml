@@ -18,7 +18,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/navigation_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    <PreferenceCategory
+        android:key="power_button"
+        android:title="@string/power_button_title">
 
+        <SwitchPreference
+                android:key="camera_double_tap_power_gesture"
+                android:title="@string/camera_double_tap_power_gesture_title"
+                android:summary="@string/camera_double_tap_power_gesture_desc"
+                android:persistent="false" />
+
+    </PreferenceCategory>
 </PreferenceScreen>
 
 

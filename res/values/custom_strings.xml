@@ -48,5 +48,8 @@
     <string name="icon_title">Icons</string>
     <string name="status_bar_icon_blacklist_title">Visibility</string>
     <string name="status_bar_icon_blacklist_summary">Adjust visible icons</string>
+
+    <!-- Power button -->
+    <string name="power_button_title">Power button</string>
 </resources>
 
