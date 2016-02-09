@@ -25,6 +25,11 @@
     <string name="navigation_title">Buttons &amp; navigation</string>
     <string name="statusbar_title">Statusbar</string>
 
+    <!-- QS options -->
+    <string name="tile_category">Tile area</string>
+    <string name="quick_settings_title">Tiles</string>
+    <string name="quick_settings_summary">Add or remove tiles</string>
+
     <!-- Contextual header -->
     <string name="notification_panel_title">Notification panel</string>
     <string name="status_bar_custom_header_title">Custom header image</string>
@@ -38,5 +43,10 @@
     <string name="header_weather_title">Header view weather</string>
     <string name="header_weather_summary">Enable notification panel header weather display</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
+
+    <!-- Statusbar -->
+    <string name="icon_title">Icons</string>
+    <string name="status_bar_icon_blacklist_title">Visibility</string>
+    <string name="status_bar_icon_blacklist_summary">Adjust visible icons</string>
 </resources>
 
