@@ -40,17 +40,24 @@ import com.android.settings.SettingsPreferenceFragment;
 public class SmartbarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
     private ListPreference mSmartBarContext;
+    private ListPreference mButtonAnim;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.smartbar_settings);
 
-        //int contextVal = Settings.Secure.getIntForUser(mContext.getContentResolver(),
-        //        "smartbar_context_menu_mode", 0, UserHandle.USER_CURRENT);
-        //mSmartBarContext = (ListPreference) findPreference("smartbar_context_menu_position");
-        //mSmartBarContext.setValue(String.valueOf(contextVal));
-        //mSmartBarContext.setOnPreferenceChangeListener(this);
+        int contextVal = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                "smartbar_context_menu_mode", 0, UserHandle.USER_CURRENT);
+        mSmartBarContext = (ListPreference) findPreference("smartbar_context_menu_position");
+        mSmartBarContext.setValue(String.valueOf(contextVal));
+        mSmartBarContext.setOnPreferenceChangeListener(this);
+
+        int buttonAnimVal = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                "smartbar_button_animation_style", 0, UserHandle.USER_CURRENT);
+        mButtonAnim = (ListPreference) findPreference("smartbar_button_animation");
+        mButtonAnim.setValue(String.valueOf(buttonAnimVal));
+        mButtonAnim.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -64,12 +71,12 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
                     .setPositiveButton(android.R.string.ok, new OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            //ArrayList<ButtonConfig> buttonConfigs = Config.getDefaultConfig(
-                            //        mContext,
-                            //        ActionConstants.getDefaults(ActionConstants.SMARTBAR));
-                            //Config.setConfig(mContext,
-                            //        ActionConstants.getDefaults(ActionConstants.SMARTBAR),
-                            //        buttonConfigs);
+                            ArrayList<ButtonConfig> buttonConfigs = Config.getDefaultConfig(
+                                    mContext,
+                                    ActionConstants.getDefaults(ActionConstants.SMARTBAR));
+                            Config.setConfig(mContext,
+                                    ActionConstants.getDefaults(ActionConstants.SMARTBAR),
+                                    buttonConfigs);
                             Intent intent = new Intent("intent_navbar_edit");
                             intent.putExtra("extra_navbar_edit_reset_layout", "resetMePlox");
                             getActivity().sendBroadcastAsUser(intent, UserHandle.CURRENT);
@@ -93,12 +100,17 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(getContentResolver(), "smartbar_context_menu_mode",
                     position);
             return true;
+        } else if (preference.equals(mButtonAnim)) {
+            int val = Integer.parseInt(((String) newValue).toString());
+            Settings.Secure.putInt(getContentResolver(), "smartbar_button_animation_style",
+                    val);
+            return true;
         }
         return false;
     }
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.APPLICATION;
+        return MetricsLogger.TUNER;
     }
 }
