@@ -23,4 +23,7 @@
 
     <!-- Shortcur picker -->
     <dimen name="shortcut_picker_left_padding">40dip</dimen>
+     <!-- Icon pack picker -->
+    <dimen name="alert_dialog_padding_material">20dp</dimen>
+
 </resources>
