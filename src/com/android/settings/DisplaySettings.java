@@ -115,7 +115,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private SwitchPreference mCameraDoubleTapPowerGesturePreference;
     private SwitchPreference mWakeWhenPluggedOrUnplugged;
-    private NumberPickerPreference mDt2lTargetVibrateConfig;
     private ListPreference mDashboardColumns;
 
     private ContentObserver mAccelerometerRotationObserver =
