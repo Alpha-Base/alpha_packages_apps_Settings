@@ -476,5 +476,10 @@
     <string name="smartbar_button_animation_summary">Set the animation style of the primary buttons when they are pressed</string>
     <string name="smartbar_button_animation_ripple">Ripple</string>
     <string name="smartbar_button_animation_spring">Spring</string>
+    <string name="smartbar_ime_action_title">Input method actions</string>
+    <string name="smartbar_ime_action_summary">Set what buttons to show when a on-screen keyboard is showing</string>
+    <string name="smartbar_ime_action_none">None</string>
+    <string name="smartbar_ime_action_arrows">Input arrows</string>
+    <string name="smartbar_ime_action_switcher">Keyboard switcher</string>
 </resources>
 
