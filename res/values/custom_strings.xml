@@ -380,6 +380,7 @@
     <string name="fling_longpress_summary">Increase or decrease the time it takes to execute a long press</string>
     <string name="fling_logo_custom_logo_pick_title">Custom logo icon</string>
     <string name="fling_logo_custom_logo_reset_title">Reset logo icon</string>
+    <string name="fling_logo_custom_logo_image_pick_title">Custom logo image</string>
 
     <!-- Navbar height -->
     <string name="navigation_bar_size_title">Bar size</string>
@@ -425,6 +426,7 @@
     <string name="shortcut_action_wake_device">Wake up device</string>
     <string name="shortcut_category">Lockscreen shortcuts</string>
     <string name="shortcut_category_summary">Enable shortcuts on lockscreen</string>
+
     <!-- CM Lockscreen shortcuts -->
     <string name="lockscreen_targets_message">Bottom corner shortcuts</string>
     <string name="lockscreen_corner_summary">Customize the shortcut icons in the corners</string>
