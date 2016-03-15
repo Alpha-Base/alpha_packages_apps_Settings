@@ -18,6 +18,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/navigation_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
     <PreferenceCategory
         android:key="power_button"
         android:title="@string/power_button_title">
@@ -60,51 +61,16 @@
                 android:defaultValue="true" />
     </PreferenceCategory>
 
-        <SwitchPreference
-        android:key="navbar_visibility"
-        android:title="@string/navbar_visibility" />
-
     <PreferenceCategory
         android:key="category_navbar_interface"
-        android:title="@string/navbar_interface_title" >
-
-        <ListPreference
-            android:entries="@array/systemui_navbar_mode_entries"
-            android:entryValues="@array/systemui_navbar_mode_values"
-            android:key="navbar_mode"
-            android:title="@string/navbar_mode" />
-
-         <PreferenceScreen
-            android:key="aosp_navbar_settings"
-            android:title="@string/aosp_navigation_bar_settings"
-            android:fragment="com.android.settings.solo.NavbarSettings" />
-
-         <PreferenceScreen
-            android:key="fling_settings"
-            android:title="@string/fling_settings"
-            android:fragment="com.android.settings.solo.FlingSettings" />
-
-    </PreferenceCategory>
-    
-    <PreferenceCategory
-        android:key="category_navbar_general"
-        android:title="@string/navbar_general_title" >
+        android:title="@string/navbarbar_title" >
 
         <PreferenceScreen
-            android:key="pulse_settings"
-            android:title="@string/pulse_settings"
-            android:fragment="com.android.settings.solo.PulseSettings" />
-
-        <com.android.settings.preference.NavbarSizePreference
-            android:key="navigation_bar_size"
-            android:title="@string/navigation_bar_size_title" />
-
-        <com.android.settings.preference.SystemSettingSwitchPreference
-            android:key="navigation_bar_left"
-            android:title="@string/navigation_bar_left_title"
-            android:summary="@string/navigation_bar_left_summary"
-            android:defaultValue="false" />
-
+                android:key="navigation"
+                android:title="@string/navigation_category"
+                android:fragment="com.android.settings.solo.NavbarSettings"
+                android:summary="@string/navbar_summary"/>
+        
     </PreferenceCategory>
 
 </PreferenceScreen>

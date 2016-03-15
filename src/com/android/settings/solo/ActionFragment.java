@@ -29,8 +29,8 @@ import com.android.internal.utils.du.Config.ActionConfig;
 import com.android.internal.utils.du.Config.ButtonConfig;
 
 import com.android.settings.solo.ShortcutPickHelper;
-import com.android.settings.preference.ActionPreference;
-import com.android.settings.widget.CustomActionListAdapter;
+import com.android.settings.solo.ActionPreference;
+import com.android.settings.solo.CustomActionListAdapter;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;

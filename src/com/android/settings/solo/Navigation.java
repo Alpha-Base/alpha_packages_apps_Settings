@@ -28,7 +28,6 @@ import android.os.Handler;
 import android.os.UserHandle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -45,10 +44,8 @@ import android.view.IWindowManager;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.android.settings.preference.SecureSettingSwitchPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.utils.du.DUActionUtils;
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.Utils;
 
@@ -60,24 +57,10 @@ public class Navigation extends SettingsPreferenceFragment implements
     private static final String KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE = "camera_double_tap_power_gesture";
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
-    private static final String NAVBAR_VISIBILITY = "navbar_visibility";
-    private static final String KEY_NAVBAR_MODE = "navbar_mode";
-    private static final String KEY_AOSP_NAVBAR_SETTINGS = "aosp_navbar_settings";
-    private static final String KEY_FLING_NAVBAR_SETTINGS = "fling_settings";
-    private static final String KEY_CATEGORY_NAVIGATION_INTERFACE = "category_navbar_interface";
-    private static final String KEY_CATEGORY_NAVIGATION_GENERAL = "category_navbar_general";
-    private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
-    private static final String KEY_NAVIGATION_BAR_SIZE = "navigation_bar_size";
 
     private ListPreference mVolumeKeyCursorControl;
     private SwitchPreference mVolumeRockerWake;
     private SwitchPreference mCameraDoubleTapPowerGesture;
-    private SwitchPreference mNavbarVisibility;
-    private ListPreference mNavbarMode;
-    private PreferenceScreen mNavbarSettings;
-    private PreferenceScreen mFlingSettings;
-    private PreferenceCategory mNavInterface;
-    private PreferenceCategory mNavGeneral;
 
     @Override
     protected int getMetricsCategory() {
@@ -89,7 +72,6 @@ public class Navigation extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         ContentResolver resolver = getActivity().getContentResolver();
         addPreferencesFromResource(R.xml.navigation_settings);
-        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         mCameraDoubleTapPowerGesture
                     = (SwitchPreference) findPreference(KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE);
@@ -113,30 +95,6 @@ public class Navigation extends SettingsPreferenceFragment implements
         int volumeRockerWake = Settings.System.getInt(getContentResolver(),
                 VOLUME_ROCKER_WAKE, 0);
         mVolumeRockerWake.setChecked(volumeRockerWake != 0);
-
-        mNavInterface = (PreferenceCategory) findPreference(KEY_CATEGORY_NAVIGATION_INTERFACE);
-        mNavGeneral = (PreferenceCategory) findPreference(KEY_CATEGORY_NAVIGATION_GENERAL);
-        mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
-        mNavbarMode = (ListPreference) findPreference(KEY_NAVBAR_MODE);
-        mNavbarSettings = (PreferenceScreen) findPreference(KEY_AOSP_NAVBAR_SETTINGS);
-        mFlingSettings = (PreferenceScreen) findPreference(KEY_FLING_NAVBAR_SETTINGS);
-
-        boolean showing = Settings.Secure.getInt(getContentResolver(),
-                Settings.Secure.NAVIGATION_BAR_VISIBLE,
-                DUActionUtils.hasNavbarByDefault(getActivity()) ? 1 : 0) != 0;
-        updateBarVisibleAndUpdatePrefs(showing);
-        mNavbarVisibility.setOnPreferenceChangeListener(this);
-
-        int mode = Settings.Secure.getInt(getContentResolver(), Settings.Secure.NAVIGATION_BAR_MODE,
-                0);
-        updateBarModeSettings(mode);
-        mNavbarMode.setOnPreferenceChangeListener(this);
-
-        // Navigation bar left-in-landscape
-        // remove if not a phone
-        if (!DUActionUtils.isNormalScreen()) {
-            mNavGeneral.removePreference(findPreference(KEY_NAVIGATION_BAR_LEFT));
-        }
     }
 
     private ListPreference initActionList(String key, int value) {
@@ -153,20 +111,6 @@ public class Navigation extends SettingsPreferenceFragment implements
 
         pref.setSummary(pref.getEntries()[index]);
         Settings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
-    }
-
-    private void updateBarModeSettings(int mode) {
-        mNavbarMode.setValue(String.valueOf(mode));
-        mNavbarSettings.setEnabled(mode == 0);
-        mNavbarSettings.setSelectable(mode == 0);
-        mFlingSettings.setEnabled(mode == 1);
-        mFlingSettings.setSelectable(mode == 1);
-    }
-
-    private void updateBarVisibleAndUpdatePrefs(boolean showing) {
-        mNavbarVisibility.setChecked(showing);
-        mNavInterface.setEnabled(mNavbarVisibility.isChecked());
-        mNavGeneral.setEnabled(mNavbarVisibility.isChecked());
     }
 
     @Override
@@ -188,18 +132,6 @@ public class Navigation extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(), VOLUME_ROCKER_WAKE,
                     value ? 1 : 0);
-            return true;
-        } else if (preference.equals(mNavbarMode)) {
-            int mode = Integer.parseInt(((String) newValue).toString());
-            Settings.Secure.putInt(getContentResolver(),
-                    Settings.Secure.NAVIGATION_BAR_MODE, mode);
-            updateBarModeSettings(mode);
-            return true;
-        } else if (preference.equals(mNavbarVisibility)) {
-            boolean showing = ((Boolean)newValue);
-            Settings.Secure.putInt(getContentResolver(), Settings.Secure.NAVIGATION_BAR_VISIBLE,
-                    showing ? 1 : 0);
-            updateBarVisibleAndUpdatePrefs(showing);
             return true;
         }
         return false;

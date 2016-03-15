@@ -16,7 +16,7 @@
  * Adapter for displaying custom actions in a list
  */
 
-package com.android.settings.widget;
+package com.android.settings.solo;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.preference;
+package com.android.settings.solo;
 
 import com.android.internal.utils.du.ActionConstants;
 import com.android.internal.utils.du.ActionConstants.Fling;

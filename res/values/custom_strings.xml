@@ -201,6 +201,8 @@
 
         <!-- Navigation Bar -->
     <string name="navigation_category">Navigation Bar</string>
+    <string name="navbarbar_title">System navigation</string>
+    <string name="navbar_summary">Navigation bar options (fling,pulse,height,width etc.)</string>
     <string name="navbar_interface_title">Interface</string>
     <string name="navbar_size">Bar size</string>
     <string name="navbar_mode">Navigation mode</string>
