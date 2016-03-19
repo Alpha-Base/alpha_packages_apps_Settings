@@ -33,6 +33,8 @@
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom app</string>
     <string name="select_custom_activity_title">Select custom activity</string>
+    <string name="help">Help</string>
+    <string name="reset_message">Reset all entries to default?</string>
 
     <!-- Tuner settings -->
     <string name="header_category_tuner">Tuner</string>
@@ -410,6 +412,7 @@
     <string name="shortcut_action_media_previous">Music - previous track</string>
     <string name="shortcut_action_wake_device">Wake up device</string>
     <string name="shortcut_category">Lockscreen shortcuts</string>
+    <string name="shortcut_category_summary">Enable shortcuts on lockscreen</string>
     <!-- CM Lockscreen shortcuts -->
     <string name="lockscreen_targets_message">Bottom corner shortcuts</string>
     <string name="lockscreen_corner_summary">Customize the shortcut icons in the corners</string>

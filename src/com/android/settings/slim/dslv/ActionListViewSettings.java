@@ -53,12 +53,12 @@ import android.widget.TextView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.android.internal.util.slim.ActionConfig;
-import com.android.internal.util.slim.ActionConstants;
-import com.android.internal.util.slim.ActionHelper;
-import com.android.internal.util.slim.ImageHelper;
-import com.android.internal.util.slim.DeviceUtils;
-import com.android.internal.util.slim.DeviceUtils.FilteredDeviceFeaturesArray;
+import com.android.internal.util.du.ActionConfig;
+import com.android.internal.util.du.ActionConstants;
+import com.android.internal.util.du.ActionHelper;
+import com.android.internal.util.du.ImageHelper;
+import com.android.internal.util.du.DeviceUtils;
+import com.android.internal.util.du.DeviceUtils.FilteredDeviceFeaturesArray;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;

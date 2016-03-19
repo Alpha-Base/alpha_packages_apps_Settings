@@ -36,7 +36,7 @@ public class ShortcutCategory extends SettingsPreferenceFragment implements
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.OWLSNEST;
+        return MetricsLogger.TUNER;
     }
 
     @Override
