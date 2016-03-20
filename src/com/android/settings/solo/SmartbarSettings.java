@@ -48,23 +48,23 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.smartbar_settings);
 
-        int contextVal = Settings.Secure.getIntForUser(mContext.getContentResolver(),
-                "smartbar_context_menu_mode", 0, UserHandle.USER_CURRENT);
-        mSmartBarContext = (ListPreference) findPreference("smartbar_context_menu_position");
-        mSmartBarContext.setValue(String.valueOf(contextVal));
-        mSmartBarContext.setOnPreferenceChangeListener(this);
+        //int contextVal = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+        //        "smartbar_context_menu_mode", 0, UserHandle.USER_CURRENT);
+        //mSmartBarContext = (ListPreference) findPreference("smartbar_context_menu_position");
+        //mSmartBarContext.setValue(String.valueOf(contextVal));
+        //mSmartBarContext.setOnPreferenceChangeListener(this);
 
-        int imeVal = Settings.Secure.getIntForUser(mContext.getContentResolver(),
-                "smartbar_ime_hint_mode", 1, UserHandle.USER_CURRENT);
-        mImeActions = (ListPreference) findPreference("smartbar_ime_action");
-        mImeActions.setValue(String.valueOf(imeVal));
-        mImeActions.setOnPreferenceChangeListener(this);
+        //int imeVal = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+        //       "smartbar_ime_hint_mode", 1, UserHandle.USER_CURRENT);
+        //mImeActions = (ListPreference) findPreference("smartbar_ime_action");
+        //mImeActions.setValue(String.valueOf(imeVal));
+        //mImeActions.setOnPreferenceChangeListener(this);
 
-        int buttonAnimVal = Settings.Secure.getIntForUser(mContext.getContentResolver(),
-                "smartbar_button_animation_style", 0, UserHandle.USER_CURRENT);
-        mButtonAnim = (ListPreference) findPreference("smartbar_button_animation");
-        mButtonAnim.setValue(String.valueOf(buttonAnimVal));
-        mButtonAnim.setOnPreferenceChangeListener(this);
+        //int buttonAnimVal = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+        //        "smartbar_button_animation_style", 0, UserHandle.USER_CURRENT);
+        //mButtonAnim = (ListPreference) findPreference("smartbar_button_animation");
+        //mButtonAnim.setValue(String.valueOf(buttonAnimVal));
+        //mButtonAnim.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -78,12 +78,12 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
                     .setPositiveButton(android.R.string.ok, new OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            ArrayList<ButtonConfig> buttonConfigs = Config.getDefaultConfig(
-                                    mContext,
-                                    ActionConstants.getDefaults(ActionConstants.SMARTBAR));
-                            Config.setConfig(mContext,
-                                    ActionConstants.getDefaults(ActionConstants.SMARTBAR),
-                                    buttonConfigs);
+                            //ArrayList<ButtonConfig> buttonConfigs = Config.getDefaultConfig(
+                           //         mContext,
+                            //        ActionConstants.getDefaults(ActionConstants.SMARTBAR));
+                            //Config.setConfig(mContext,
+                           //         ActionConstants.getDefaults(ActionConstants.SMARTBAR),
+                           //        buttonConfigs);
                             Intent intent = new Intent("intent_navbar_edit");
                             intent.putExtra("extra_navbar_edit_reset_layout", "resetMePlox");
                             getActivity().sendBroadcastAsUser(intent, UserHandle.CURRENT);
