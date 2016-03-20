@@ -21,11 +21,17 @@
 
     <PreferenceCategory
         android:key="icons"
-        android:title="@string/icon_title">
+        android:title="@string/basic_title">
+
+        <PreferenceScreen
+            android:fragment="com.android.settings.solo.ClockSettings"
+            android:key="clock_settings"
+            android:title="@string/status_bar_clock"
+    	    android:summary="@string/status_bar_clock_summary" />
 
         <PreferenceScreen
                 android:title="@string/status_bar_icon_blacklist_title"
-                android:summary="@string/status_bar_icon_blacklist_summary" >
+                android:summary="@string/status_bar_icon_blacklist_summary">
                 <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.android.systemui"
                     android:targetClass="com.android.systemui.tuner.TunerActivity" />
