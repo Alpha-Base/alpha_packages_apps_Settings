@@ -32,6 +32,19 @@
                     android:targetClass="@string/additional_system_update_menu" />
         </PreferenceScreen-->
 
+        <!-- Tuesday version -->
+	<Preference android:key="tuesday_version"
+		style="?android:preferenceInformationStyle"
+		android:title="@string/tuesday_version"
+		android:summary="@string/device_info_default"
+                android:icon="@drawable/tuesday_logo" />
+
+	<!-- Build date -->
+	<Preference android:key="build_date"
+		style="?android:preferenceInformationStyle"
+		android:title="@string/build_date"
+		android:summary="@string/device_info_default" />
+
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status"
@@ -112,18 +125,6 @@
                 style="?android:preferenceInformationStyle"
                 android:title="@string/kernel_version"
                 android:summary="@string/device_info_default"/>
-
-        <!-- Solo version -->
-	<Preference android:key="solo_version"
-		style="?android:preferenceInformationStyle"
-		android:title="@string/solo_version"
-		android:summary="@string/device_info_default" />
-
-	<!-- Build date -->
-	<Preference android:key="build_date"
-		style="?android:preferenceInformationStyle"
-		android:title="@string/build_date"
-		android:summary="@string/device_info_default" />
 
         <!-- Detailed build version -->
         <Preference android:key="build_number"
