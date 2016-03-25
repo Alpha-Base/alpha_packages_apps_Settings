@@ -30,6 +30,12 @@
     	    android:summary="@string/status_bar_clock_summary" />
 
         <PreferenceScreen
+            android:fragment="com.android.settings.solo.BatterySettings"
+            android:key="battery_settings"
+            android:title="@string/battery_settings"
+    	    android:summary="@string/battery_settings_summary" />
+
+        <PreferenceScreen
                 android:title="@string/status_bar_icon_blacklist_title"
                 android:summary="@string/status_bar_icon_blacklist_summary">
                 <intent android:action="android.intent.action.MAIN"
