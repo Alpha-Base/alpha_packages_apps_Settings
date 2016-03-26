@@ -35,6 +35,7 @@
     <string name="select_custom_activity_title">Select custom activity</string>
     <string name="help">Help</string>
     <string name="reset_message">Reset all entries to default?</string>
+    <string name="more">More</string>
 
     <!-- Tuner settings -->
     <string name="header_category_tuner">Tuner</string>
@@ -532,5 +533,9 @@
     <string name="status_bar_battery_style_dotted_circle">Dotted circle</string>
     <string name="status_bar_battery_style_text">Text</string>
     <string name="status_bar_battery_style_hidden">Hidden</string>
+
+    <!-- Lock clock -->
+    <string name="lock_clock_title">Clock widget</string>
+    <string name="lock_clock_summary">View or change how the \'cLock\' Home  widget will display</string>
 </resources>
 

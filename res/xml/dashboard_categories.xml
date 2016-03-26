@@ -145,6 +145,13 @@
             </intent>
         </dashboard-tile>
 
+         <!-- More -->
+        <dashboard-tile
+            android:id="@+id/more"
+            android:title="@string/more"
+            android:fragment="com.android.settings.solo.More"
+            android:icon="@drawable/ic_settings_more" />
+
     </dashboard-category>
     <!-- DEVICE -->
     <dashboard-category

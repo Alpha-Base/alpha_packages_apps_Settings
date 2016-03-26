@@ -2645,5 +2645,6 @@
             </intent-filter>
         </activity>
 
+         <activity android:name=".solo.More" />
     </application>
 </manifest>
