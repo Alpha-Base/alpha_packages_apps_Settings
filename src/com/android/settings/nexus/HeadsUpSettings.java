@@ -48,7 +48,7 @@ import com.android.settings.Utils;
 import com.android.settings.nexus.PackageListAdapter;
 import com.android.settings.nexus.PackageListAdapter.PackageItem;
 import com.android.settings.SettingsActivity;
-import com.android.settings.nexus.BaseGlobalSettingSwitchBar;
+import com.android.settings.nexus.BaseSystemSettingSwitchBar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,7 +58,7 @@ import java.util.Map;
 import com.android.internal.logging.MetricsLogger;
 
 public class HeadsUpSettings extends SettingsPreferenceFragment
-        implements BaseGlobalSettingSwitchBar.SwitchBarChangeCallback,
+        implements BaseSystemSettingSwitchBar.SwitchBarChangeCallback,
                 AdapterView.OnItemLongClickListener, Preference.OnPreferenceClickListener {
 
     private static final int DIALOG_DND_APPS = 0;
@@ -81,7 +81,7 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
     private Map<String, Package> mBlacklistPackages;
     private Map<String, Package> mWhitelistPackages;
 
-    private BaseGlobalSettingSwitchBar mEnabledSwitch;
+    private BaseSystemSettingSwitchBar mEnabledSwitch;
 
     private ViewGroup mPrefsContainer;
     private View mDisabledText;
@@ -140,8 +140,8 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
     public void onStart() {
         super.onStart();
         final SettingsActivity activity = (SettingsActivity) getActivity();
-        mEnabledSwitch = new BaseGlobalSettingSwitchBar(activity, activity.getSwitchBar(),
-                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, true, this);
+        mEnabledSwitch = new BaseSystemSettingSwitchBar(activity, activity.getSwitchBar(),
+                Settings.System.HEADS_UP_USER_ENABLED, true, this);
     }
 
     @Override
@@ -453,14 +453,16 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
     }
 
     private boolean getUserHeadsUpState() {
-         return Settings.Global.getInt(getContentResolver(),
-                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED,
-                Settings.Global.HEADS_UP_ON) != 0;
+         return Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.HEADS_UP_USER_ENABLED,
+                Settings.System.HEADS_UP_USER_ON,
+                UserHandle.USER_CURRENT) != 0;
     }
 
     private void setUserHeadsUpState(int val) {
-         Settings.Global.putInt(getContentResolver(),
-                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, val);
+         Settings.System.putIntForUser(getContentResolver(),
+                Settings.System.HEADS_UP_USER_ENABLED,
+                val, UserHandle.USER_CURRENT);
     }
 
     private void updateEnabledState() {
