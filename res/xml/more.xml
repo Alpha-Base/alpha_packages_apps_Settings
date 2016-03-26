@@ -39,6 +39,7 @@ limitations under the License.
 
         <PreferenceScreen
             android:id="@+id/supersu_settings"
+            android:summary="@string/supersu_summary"
             android:title="@string/supersu_title">
             <intent
                 android:action="android.intent.action.MAIN"
