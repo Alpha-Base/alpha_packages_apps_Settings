@@ -683,6 +683,8 @@
     <string name="headsup_settings_title">Heads up notifications</string>
     <string name="summary_heads_up_enabled">Peeking notifications are enabled</string>
     <string name="summary_heads_up_disabled">Peeking notifications are disabled</string>
+    <string name="force_headsup_title">Force heads up</string>
+    <string name="force_headsup_summary">Force heads up in all applications</string>
 
 </resources>
 
