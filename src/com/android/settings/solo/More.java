@@ -25,7 +25,9 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 public class More extends SettingsPreferenceFragment {
-    
+    private static final String KEY_LOCK_CLOCK =
+            "lock_clock";
+
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.TUNER;
@@ -36,7 +38,23 @@ public class More extends SettingsPreferenceFragment {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.more);
+
+        // Remove the lock clock preference if its not installed
+        if (!isPackageInstalled("com.cyanogenmod.lockclock")) {
+            removePreference(KEY_LOCK_CLOCK);
+        }
+
+    }
+
+    private boolean isPackageInstalled(String packageName) {
+        PackageManager pm = getPackageManager();
+        boolean installed = false;
+        try {
+           pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+           installed = true;
+        } catch (PackageManager.NameNotFoundException e) {
+           installed = false;
+        }
+        return installed;
     }
 }
-
-
