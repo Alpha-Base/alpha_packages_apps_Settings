@@ -115,12 +115,6 @@
                 android:summary="@string/switch_off_text"
                 android:fragment="com.android.settings.ScreenPinningSettings"/>
 
-        <PreferenceScreen
-                android:key="lockscreen_shortcuts"
-                android:title="@string/shortcut_category"
-                android:summary="@string/shortcut_category_summary"
-                android:fragment="com.android.settings.solo.lockscreen.ShortcutCategory"/>
-
         <Preference android:key="usage_access"
                     android:title="@string/usage_access_title"
                     android:fragment="com.android.settings.applications.ManageApplications">

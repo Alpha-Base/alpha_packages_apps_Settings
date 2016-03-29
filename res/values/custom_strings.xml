@@ -41,8 +41,17 @@
     <string name="header_category_tuner">Tuner</string>
     <string name="category_key_tuner">Tuner</string>
     <string name="notiication_drawer_title">Notification drawer</string>
+    <string name="notiication_drawer_summary">Qs tiles and statusbar expanded options</string>
     <string name="navigation_title">Buttons &amp; navigation</string>
     <string name="statusbar_title">Statusbar</string>
+    <string name="statusbar_summary">Basic statusbar adjustments (battery,clock,icons)</string>
+    <string name="advanced_doghouse">Advanced Settings</string>
+    <string name="advanced_doghouse_summary">Tuesday special additions</string>
+    <string name="navigation_section">Navigation section</string>
+    <string name="statusbar_category">Statusbar zone</string>
+    <string name="hw_button_title">Hardware buttons</string>
+    <string name="hw_button_summary">Customize volume/power button actions</string>
+    <string name="lockscreen_category">Lockscreen options</string>
 
     <!-- QS options -->
     <string name="tile_category">Tile area</string>
@@ -540,7 +549,7 @@
     <string name="widget_title">Apps and widgets entry</string>
      
     <!-- Lock screen -->
-    <string name="lock_screen_weather_settings_title">Lock screen weather</string>
+    <string name="lock_screen_weather_settings_title">Weather on lockscreen</string>
     <string name="lock_screen_weather_settings_summary">Customize Weather on lockscreen</string>
 
    <!-- Weather settings -->
@@ -572,5 +581,48 @@
     <string name="battery_bar_animate_title">Charging animation</string>
     <string name="battery_bar_animate_summary">Enable bar animation while charging</string>
     <string name="battery_bar_color">Battery bar color</string>
+
+    <!-- Themes Settings -->
+    <!-- Settings main menu entry -->
+    <string name="themes_settings_title">Themes</string>
+
+    <!-- Button dashboard title -->
+    <string name="button_pref_title">Buttons</string>
+    <string name="hardware_keys_power_key_title">Power button</string>
+
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Advanced reboot</string>
+    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for rebooting into recovery, bootloader or performing a soft reboot</string>
+
+    <!-- Power menu -->
+    <string name="power_menu_title">Power menu</string>
+    <string name="power_menu_power_title">Power off</string>
+    <string name="power_menu_reboot_title">Reboot menu</string>
+    <string name="power_menu_screenshot_title">Screenshot</string>
+    <string name="power_menu_airplane_title">Airplane mode</string>
+    <string name="power_menu_users_title">User switcher</string>
+    <string name="power_menu_settings_title">Settings shortcut</string>
+    <string name="power_menu_lockdown_title">Device lockdown</string>
+    <string name="power_menu_bug_report_title">Bug report</string>
+    <string name="power_menu_sound_title">Sound panel</string>
+    <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
+
+    <!-- EdgeGesture service -->
+    <string name="edge_gesture_service_title">Block gesture touch events</string>
+    <string name="edge_gesture_service_summary">Don\'t send touch events for navigation and status bar gestures to apps</string>
+
+    <!-- Expanded desktop -->
+    <string name="power_menu_expanded_desktop">Expanded desktop</string>
+    <string name="expanded_hide_nothing">Hide nothing</string>
+    <string name="expanded_hide_status">Hide status bar</string>
+    <string name="expanded_hide_navigation">Hide navigation bar</string>
+    <string name="expanded_hide_both">Hide both</string>
+    <string name="expanded_nothing_to_show">To add a custom per-app configuration for expanded state, set "Enabled for all" to the off position</string>
+    <string name="expanded_desktop_state">Expanded state</string>
+    <string name="expanded_enabled_for_all">Enabled for all</string>
+    <string name="expanded_user_configurable">User configurable</string>
+    <string name="expanded_desktop_style">Expanded desktop style</string>
+    <string name="expanded_desktop_style_description">Choose a default expanded desktop style</string>
+    <string name="expanded_desktop_title">Expanded desktop options</string>
 </resources>
 

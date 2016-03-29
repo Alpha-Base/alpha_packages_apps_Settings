@@ -17,12 +17,74 @@ limitations under the License.
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/more">
 
-    <PreferenceScreen
-        android:key="lock_screen_weather_settings"
-        android:title="@string/lock_screen_weather_settings_title"
-        android:summary="@string/lock_screen_weather_settings_summary"
-        android:fragment="com.android.settings.solo.WeatherSettings" />
+    <!-- Tuesday version -->
+    <Preference android:key="more_settings"
+            style="?android:preferenceInformationStyle"
+            android:title="@string/advanced_doghouse"
+            android:summary="@string/advanced_doghouse_summary"
+            android:icon="@drawable/tuesday_logo" 
+            />
 
+    <PreferenceCategory
+        android:key="nav"
+        android:title="@string/navigation_section">
+
+       <PreferenceScreen
+            android:id="@+id/navigation"
+            android:title="@string/hw_button_title"
+            android:fragment="com.android.settings.solo.Navigation"
+            android:summary="@string/hw_button_summary"
+            />
+
+       <PreferenceScreen
+            android:key="navigation"
+            android:title="@string/navigation_category"
+            android:fragment="com.android.settings.solo.NavbarSettings"
+            android:summary="@string/navbar_summary"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="status"
+        android:title="@string/statusbar_category">
+
+       <!-- DRAWER -->
+       <PreferenceScreen
+            android:id="@+id/notiication_drawer"
+            android:title="@string/notiication_drawer_title"
+            android:fragment="com.android.settings.solo.NotificationDrawer"
+            android:summary="@string/notiication_drawer_summary"
+            />
+
+        <!-- STATUSBAR -->
+       <PreferenceScreen
+            android:id="@+id/statusbar"
+            android:title="@string/statusbar_title"
+            android:fragment="com.android.settings.solo.Statusbar"
+            android:summary="@string/statusbar_summary"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="lockscreen"
+        android:title="@string/lockscreen_category">
+
+        <PreferenceScreen
+            android:key="lockscreen_shortcuts"
+            android:title="@string/shortcut_category"
+            android:summary="@string/shortcut_category_summary"
+            android:fragment="com.android.settings.solo.lockscreen.ShortcutCategory"
+            />
+
+        <PreferenceScreen
+            android:key="lock_screen_weather_settings"
+            android:title="@string/lock_screen_weather_settings_title"
+            android:summary="@string/lock_screen_weather_settings_summary"
+            android:fragment="com.android.settings.solo.WeatherSettings" 
+            />
+
+    </PreferenceCategory>
     <PreferenceCategory
         android:key="more_cat_lock_clock"
         android:title="@string/widget_title">

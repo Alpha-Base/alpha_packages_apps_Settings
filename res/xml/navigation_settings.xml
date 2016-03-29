@@ -61,18 +61,6 @@
                 android:defaultValue="true" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="category_navbar_interface"
-        android:title="@string/navbarbar_title" >
-
-        <PreferenceScreen
-                android:key="navigation"
-                android:title="@string/navigation_category"
-                android:fragment="com.android.settings.solo.NavbarSettings"
-                android:summary="@string/navbar_summary"/>
-        
-    </PreferenceCategory>
-
 </PreferenceScreen>
 
 
