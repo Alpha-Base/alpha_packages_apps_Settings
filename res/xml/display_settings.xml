@@ -48,11 +48,6 @@
                 settings:keywords="@string/keywords_display_wallpaper"
                 android:fragment="com.android.settings.WallpaperTypeSettings" />
 
-        <PreferenceScreen
-                android:key="expanded_desktop"
-                android:title="@string/power_menu_expanded_desktop"
-                android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
-
         <ListPreference
                 android:key="screen_timeout"
                 android:title="@string/screen_timeout"
@@ -139,6 +134,17 @@
         <PreferenceCategory
              android:key="category_wakeup_options"
              android:title="@string/display_category_wakeup_options_title" >
+
+         <PreferenceScreen
+                android:key="expanded_desktop"
+                android:title="@string/power_menu_expanded_desktop"
+                android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
+
+            <com.android.settings.preference.SystemSettingSwitchPreference
+                android:key="toast_icon"
+                android:title="@string/toast_icon_title"
+                android:summary="@string/toast_icon_summary"
+                android:defaultValue="false" />
 
             <SwitchPreference
                 android:key="wakeup_when_plugged_unplugged"
