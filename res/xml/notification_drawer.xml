@@ -30,14 +30,6 @@
                     android:entryValues="@array/quick_pulldown_values"
                     android:persistent="false" />
 
-            <PreferenceScreen
-                    android:title="@string/quick_settings_title"
-                    android:summary="@string/quick_settings_summary" >
-                    <intent android:action="android.intent.action.MAIN"
-                            android:targetPackage="com.android.systemui"
-                            android:targetClass="com.android.systemui.tuner.QsActivity" />
-            </PreferenceScreen>
-
     </PreferenceCategory>
 
     <PreferenceCategory
